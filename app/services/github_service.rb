@@ -24,13 +24,6 @@ class GithubService
     end
    user_json = JSON.parse(user_response.body)
    user_json["login"]
-=======
-       req.headers['Authorization'] = "token #{self.access_token}"
-       req.headers['Accept'] = 'application/json'
-     end
-    user_json = JSON.parse(user_response.body)
-    user_json["login"]
->>>>>>> dda808de02288c8a1bc201f921b68ee5316c0384
   end
 
   def get_repos
