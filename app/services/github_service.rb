@@ -1,5 +1,5 @@
 class GithubService
-
+  require 'pry'
   attr_reader :access_token
 
   def initialize(access_hash = nil)
@@ -18,11 +18,19 @@ class GithubService
 
   def get_username
     user_response = Faraday.get "https://api.github.com/user" do |req|
+<<<<<<< HEAD
       req.headers['Authorization'] = "token #{self.access_token}"
       req.headers['Accept'] = 'application/json'
     end
    user_json = JSON.parse(user_response.body)
    user_json["login"]
+=======
+       req.headers['Authorization'] = "token #{self.access_token}"
+       req.headers['Accept'] = 'application/json'
+     end
+    user_json = JSON.parse(user_response.body)
+    user_json["login"]
+>>>>>>> dda808de02288c8a1bc201f921b68ee5316c0384
   end
 
   def get_repos
